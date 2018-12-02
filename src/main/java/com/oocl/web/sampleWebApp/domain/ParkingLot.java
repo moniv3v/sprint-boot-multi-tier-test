@@ -1,16 +1,15 @@
 package com.oocl.web.sampleWebApp.domain;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "parking_lot")
 public class ParkingLot {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "parking_boy_id", length = 64, unique = true, nullable = false)
+    @Column(name = "parking_lot_id", length = 64, unique = true, nullable = false)
     private String parkingLotId;
 
     @Column(name = "capacity", length = 100)
