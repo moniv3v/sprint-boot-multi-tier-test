@@ -7,25 +7,21 @@ import java.util.Objects;
 
 public class ParkingLotResponse {
     private String parkingLotId;
+    private int capacity;
 
-    public String getParkingLotId(){
+    public String getParkingLotId() {
         return parkingLotId;
     }
 
-    public void setParkingLotId(String parkingLotId) {
-        this.parkingLotId = parkingLotId;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public static ParkingLotResponse create(String parkingLotId) {
-        Objects.requireNonNull(parkingLotId);
-
+    public static ParkingLotResponse create(String parkingLotId, int capacity) {
         final ParkingLotResponse response = new ParkingLotResponse();
-        response.setParkingLotId(parkingLotId);
+        response.parkingLotId = parkingLotId;
+        response.capacity = capacity;
         return response;
-    }
-
-    public static ParkingLotResponse create(ParkingLot entity) {
-        return create(entity.getParkingLotId());
     }
 
     @JsonIgnore
